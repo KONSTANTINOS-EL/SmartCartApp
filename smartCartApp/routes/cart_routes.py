@@ -187,3 +187,14 @@ def delete_all_carts():
         return jsonify({"message": "Cart is deleted"}), 200
     except Exception as ex:
         return jsonify({"error": str(ex)}), 500
+    
+@cart_routes.route("/cart/delete_product_from_cart/<product_id>", methods=["DELETE"])
+def delete_product(product_id):
+    try:
+        user_id = Auth.get_current_user_id()
+        repo_cart = RepositoryCart(db)
+        repo_cart.delet_product_from_cart(user_id, product_id)
+
+        return jsonify({"message": "Product from cart is deleted"}), 200
+    except Exception as ex:
+        return jsonify({"error": str(ex)})

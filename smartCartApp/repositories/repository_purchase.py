@@ -27,7 +27,7 @@ class RepositoryPurchase:
                 "price_at_purchase": float(sum(item["price"] * item["quantity"] for item in cart["products"]))
             }
             
-            result =  self.purchase_collection.insert_one(purchase_data)
+            self.purchase_collection.insert_one(purchase_data)
 
             #Clear the cart after purchase
             repo_cart = RepositoryCart(self.db)

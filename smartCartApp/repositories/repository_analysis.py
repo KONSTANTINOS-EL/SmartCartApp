@@ -20,6 +20,7 @@ class RepositoryAnalysis:
             }
         
         all_rows = []
+        
 
         for purchase in purchases:
             for item in purchase["products"]:
@@ -74,7 +75,7 @@ class RepositoryAnalysis:
         product_obj_id = ObjectId(product_id)
 
         #Find all markets containing this product
-        purchases = list(self.db.find({"products.product_id": product_obj_id}))
+        purchases = list(self.db.purchases.find({"products.product_id": product_obj_id}))
 
         other_products_ids = []
 
@@ -82,7 +83,7 @@ class RepositoryAnalysis:
             for item in purchase["products"]:
                 pid = item["product_id"]
                 if pid != product_obj_id:
-                    other_products_ids.append({str(pid)})
+                    other_products_ids.append((pid))
         
         product_counter = Counter(other_products_ids)
         most_common_ids = [ObjectId(pid) for pid, _ in product_counter.most_common(5)]

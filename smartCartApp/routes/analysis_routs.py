@@ -8,8 +8,8 @@ analysis_routes = Blueprint("analysis_routes", __name__)
 repo = RepositoryAnalysis(db)
 
 #User statistics
-@analysis_routes.route("/api/analysis/user_purchases/<user_id>", methods=["GET"])
-def get_user_stats(user_id):
+@analysis_routes.route("/api/analysis/user_purchases", methods=["GET"])
+def get_user_stats():
     try:
         user_id = Auth.get_current_user_id()
         stats = repo.get_user_purchase_stattistics(user_id)
@@ -18,8 +18,8 @@ def get_user_stats(user_id):
         return jsonify({"error": str(ex)}),500
     
 #Predict next product.
-@analysis_routes.route("/api/analysis/predict_next/<user_id>", methods=["GET"])
-def predict_next(user_id):
+@analysis_routes.route("/api/analysis/predict_next", methods=["GET"])
+def predict_next():
     try:
         user_id = Auth.get_current_user_id()
         top_products = repo.predict_next_products(user_id)

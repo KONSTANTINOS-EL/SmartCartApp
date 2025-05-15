@@ -51,6 +51,7 @@ if st.session_state.token is None:
                 st.session_state.user_id = user_id
                 st.success("Login successful!")
                 st.switch_page("pages/2_Products_and_Cart.py")
+                st.switch_page("pages/3_Statistics_Graphics.py")
             else:
                 st.error("Login failed. Please check your credentials.")
     else:

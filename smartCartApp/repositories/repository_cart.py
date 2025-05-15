@@ -137,3 +137,11 @@ class RepositoryCart:
     
     def delete_all_carts(self, user_id):
         self.carts_collection.delete_many({"user_id": ObjectId(user_id)})
+    
+
+    def delet_product_from_cart(self, user_id, product_id):
+        result = self.carts_collection.update_one(
+            {"user_id": ObjectId(user_id)},
+            {"$pull": {"products": {"product_id": ObjectId(product_id)}}}
+        )
+        return result 
