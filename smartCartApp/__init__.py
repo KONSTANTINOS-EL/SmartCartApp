@@ -15,7 +15,8 @@ server.json_encoder = JSONEncoder
 client = MongoClient('localhost:27017')
 db = client['smart_cart_db']
 
-from smartCartApp.routes.cart_routes import product_routes, cart_routes
+from smartCartApp.routes.cart_routes import cart_routes
+from smartCartApp.routes.product_routes import product_routes
 from smartCartApp.routes.user_routes import user_routes
 from smartCartApp.routes.webScraping_routes import webScraping_product_routes
 from smartCartApp.routes.purchase_routes import purchase_routes
