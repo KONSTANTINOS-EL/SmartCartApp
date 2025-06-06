@@ -16,7 +16,7 @@ Smart cart management with Python (Flask), MongoDB and Streamlit UI.
 
 # Installation
 
-# Clone the repo ή download -> unzip it
+# Clone the repo or download -> unzip it
 git clone https://github.com/KONSTANTINOS-EL/SmartCartApp.git
 cd SmartCartApp
 
