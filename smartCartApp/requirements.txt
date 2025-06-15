@@ -1,0 +1,9 @@
+flask
+pymongo
+flask-cors
+flask-jwt-extended
+flask-bcrypt
+requests
+bs4
+unidecode
+pandas

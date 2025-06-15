@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from itertools import zip_longest
-from smartCartApp import db
+from routes import db
 from unidecode import unidecode 
 
 def normalize_string(string):

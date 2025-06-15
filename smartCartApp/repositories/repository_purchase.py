@@ -1,5 +1,5 @@
 from bson import ObjectId
-from smartCartApp.repositories.repository_cart import RepositoryCart
+from repositories.repository_cart import RepositoryCart
 
 class RepositoryPurchase:
     def __init__(self, db):

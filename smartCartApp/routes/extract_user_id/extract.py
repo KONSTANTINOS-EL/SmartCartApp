@@ -1,5 +1,5 @@
 from flask import request
-from smartCartApp.utils.jwt_utils import decode_token
+from utils.jwt_utils import decode_token
 
 class Auth:
     @staticmethod

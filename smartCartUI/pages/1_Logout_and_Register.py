@@ -4,7 +4,8 @@ from streamlit_extras.switch_page_button import switch_page
 
 
 
-API_URL = "http://localhost:5000"
+API_URL = "http://smartcart-backend:5000"
+
 
 @st.cache_data
 

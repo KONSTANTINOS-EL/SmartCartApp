@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
-from smartCartApp.repositories.repository_product import RepositoryProducts
-from smartCartApp import db
+from repositories.repository_product import RepositoryProducts
+from routes import db
 
 
 product_routes = Blueprint('product_routes', __name__)

@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import requests
 
-API_URL = "http://localhost:5000"
+API_URL = 'http://smartcart-backend:5000'
 
 if not st.session_state.get("token") or not st.session_state.get("user_id"):
     st.warning("Πρέπει να συνδεθείς πρώτα.")
@@ -100,9 +100,9 @@ if st.button("Διαγραφή όλων των προϊόντων"):
 
 for index, row in df.iterrows():
     st.image(row.get("image_url"), width=150)
-    st.write(f"**{row["name"]}** - {row["price"]}€")
-    st.write(f"{row["description"]}")
-    if st.button("Προσθήκη στο καλάθι", key=f"{row["name"]}_{index}"):
+    st.write(f"**{row['name']}** - {row['price']}€")
+    st.write(f"{row['description']}")
+    if st.button("Προσθήκη στο καλάθι", key=f"{row['name']}_{index}"):
         result = add_to_cart(row["_id"], quantity=1)
         if result:
             st.success(f"Το προϊόν προστέθηκε στο καλάθι επιτυχώς!")
@@ -123,7 +123,7 @@ if cart_items:
 
         st.sidebar.write(f"**{name}**")
         st.sidebar.write(f"Ποσότητα: {quantity} - {price}€ x {quantity} = {total:.2f}€")
-        if st.sidebar.button("Αφαίρεση", key=f"delete_{item["product_id"]}"):
+        if st.sidebar.button("Αφαίρεση", key=f"delete_{item['product_id']}"):
             delete_product_from_cart(item["product_id"])
         else:
             st.error("Αποτυχία αφαίρεσης από την λίστα προϊόντων")

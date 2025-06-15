@@ -1,8 +1,7 @@
 from bson import ObjectId
 import pandas as pd
 from collections import Counter
-from datetime import datetime
-from pymongo import DESCENDING
+
 
 class RepositoryAnalysis:
     def __init__(self, db):

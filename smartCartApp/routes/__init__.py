@@ -2,6 +2,7 @@ from flask import Flask
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 import json
+import os
 
 class JSONEncoder(json.JSONEncoder):
     def default(self, o):
@@ -12,16 +13,17 @@ class JSONEncoder(json.JSONEncoder):
 server = Flask(__name__)
 server.json_encoder = JSONEncoder
 
-client = MongoClient('localhost:27017')
+mongo_uri = os.getenv('MONGO_URI', "mongodb://mongo:27017")
+client = MongoClient(mongo_uri)
 db = client['smart_cart_db']
 
-from smartCartApp.routes.cart_routes import cart_routes
-from smartCartApp.routes.product_routes import product_routes
-from smartCartApp.routes.user_routes import user_routes
-from smartCartApp.routes.webScraping_routes import webScraping_product_routes
-from smartCartApp.routes.purchase_routes import purchase_routes
-from smartCartApp.routes.analysis_routs import analysis_routes
-from smartCartApp.routes.ai_routes import ai_route
+from routes.cart_routes import cart_routes
+from routes.product_routes import product_routes
+from routes.user_routes import user_routes
+from routes.webScraping_routes import webScraping_product_routes
+from routes.purchase_routes import purchase_routes
+from routes.analysis_routs import analysis_routes
+from routes.ai_routes import ai_route
 
 server.register_blueprint(product_routes)
 server.register_blueprint(cart_routes)

@@ -1,8 +1,8 @@
 from flask import Blueprint, request, jsonify
-from smartCartApp.model.users import User
-from smartCartApp.repositories.repository_user import RepositoryUser
-from smartCartApp.utils.password_utils import hash_password, check_password
-from smartCartApp.utils.jwt_utils import generate_token, decode_token
+from model.users import User
+from repositories.repository_user import RepositoryUser
+from utils.password_utils import hash_password, check_password
+from utils.jwt_utils import generate_token, decode_token
 
 user_routes = Blueprint("user_routes", __name__)
 

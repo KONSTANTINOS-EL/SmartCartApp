@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify
 from bson import ObjectId
-from smartCartApp import db
+from routes import db
 from LLM import ai_services
 
 ai_route = Blueprint("ai_routes", __name__)

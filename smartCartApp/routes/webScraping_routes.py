@@ -1,6 +1,6 @@
 from flask import Blueprint ,request, jsonify
-from smartCartApp import db
-from Scraping.web_scraping import scrape_products_from_sklavenitis, scrape_products_from_masouti
+from routes import db
+from scraping.web_scraping import scrape_products_from_sklavenitis, scrape_products_from_masouti
 
 
 

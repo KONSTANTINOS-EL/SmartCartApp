@@ -1,8 +1,8 @@
 from bson import ObjectId
 from datetime import datetime
-from smartCartApp import db
-from smartCartApp.model import carts
-from smartCartApp.exceptions.smartCart_exceptions import DatabaseException, CartNotFound, InvalidProductExcepton
+from routes import db
+from model import carts
+from exceptions.smartCart_exceptions import DatabaseException, CartNotFound, InvalidProductExcepton
 from pymongo import ReturnDocument
 import hashlib
 import os

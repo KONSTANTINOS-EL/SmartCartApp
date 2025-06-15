@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 import plotly.express as px
 
-API_URL = "http://localhost:5000"
+API_URL = 'http://smartcart-backend:5000'
 
 if not st.session_state.get("token") or not st.session_state.get("user_id"):
     st.warning("Πρέπει να συνδεθείς πρώτα.")

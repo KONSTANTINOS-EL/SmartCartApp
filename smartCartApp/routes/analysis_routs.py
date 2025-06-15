@@ -1,8 +1,8 @@
 from flask import Blueprint, request, jsonify
 from bson import ObjectId
-from smartCartApp import db
-from smartCartApp.repositories.repository_analysis import RepositoryAnalysis
-from smartCartApp.routes.extract_user_id.extract import Auth
+from routes import db
+from repositories.repository_analysis import RepositoryAnalysis
+from routes.extract_user_id.extract import Auth
 
 analysis_routes = Blueprint("analysis_routes", __name__)
 repo = RepositoryAnalysis(db)

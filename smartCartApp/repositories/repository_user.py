@@ -1,5 +1,5 @@
 from bson import ObjectId
-from smartCartApp import db
+from routes import db
 
 
 users_collection = db["users"]

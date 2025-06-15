@@ -1,7 +1,7 @@
-from smartCartApp.repositories.repository_purchase import RepositoryPurchase
+from repositories.repository_purchase import RepositoryPurchase
 from flask import Blueprint, request, jsonify
-from smartCartApp.routes.extract_user_id.extract import Auth
-from smartCartApp import db
+from routes.extract_user_id.extract import Auth
+from routes import db
 
 purchase_routes = Blueprint('purchase_route', __name__)
 

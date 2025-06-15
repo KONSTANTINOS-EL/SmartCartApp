@@ -1,10 +1,10 @@
 from bson import ObjectId
 from flask import Blueprint, request, jsonify
-from smartCartApp.repositories.repository_product import RepositoryProducts
-from smartCartApp.repositories.repository_cart import RepositoryCart
-from smartCartApp.routes.extract_user_id.extract import Auth
-from smartCartApp.exceptions.smartCart_exceptions import CartNotFound, InvalidProductExcepton, DatabaseException
-from smartCartApp import db
+from repositories.repository_product import RepositoryProducts
+from repositories.repository_cart import RepositoryCart
+from routes.extract_user_id.extract import Auth
+from exceptions.smartCart_exceptions import CartNotFound, InvalidProductExcepton, DatabaseException
+from routes import db
 
 
 product_routes = Blueprint('product_routes', __name__)

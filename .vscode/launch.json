@@ -11,7 +11,7 @@
             "request": "launch",
             "module": "flask",
             "env": {
-                "FLASK_APP": "c:/Μεταπτυχιακό/Python/SmartCartApp/main.py",
+                "FLASK_APP": "c:/Μεταπτυχιακό/Python/SmartCartApp/smartCartApp/main.py",
                 "FLASK_DEBUG": "1"
             },
             "args": [

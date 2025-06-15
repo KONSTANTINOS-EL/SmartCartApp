@@ -1,5 +1,5 @@
 from bson import ObjectId
-from smartCartApp import db
+from routes import db
 
 products_collection = db.get_collection("products")
 carts_collection = db["carts"]
