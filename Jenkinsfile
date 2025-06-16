@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/KONSTANTINOS-EL/SmartCartApp'
+                git 'https://github.com/KONSTANTINOS-EL/SmartCartApp.git'
             }
         }
         stage('Build Containers') {
