@@ -1,11 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Clone Repository') {
-            steps {
-                git 'https://github.com/KONSTANTINOS-EL/SmartCartApp.git'
-            }
-        }
         stage('Build Containers') {
             steps {
                 sh 'docker-compose build'
