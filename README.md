@@ -23,3 +23,8 @@ cd SmartCartApp
 # Run projerct
 - run main.py
 - run smartCartUI/app.py
+
+# Execution instructions (Docker)
+1. `docker-compose up --build`
+2. Backend: [http://localhost:5000](http://localhost:5000)
+3. Frontend: [http://localhost:8501](http://localhost:8501)
