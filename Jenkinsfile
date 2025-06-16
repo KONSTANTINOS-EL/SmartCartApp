@@ -3,17 +3,17 @@ pipeline {
     stages {
         stage('Clean Up') {
             steps {
-                bat 'docker compose down || exit 0'
+                bat 'docker-compose down || exit 0'
             }
         }
         stage('Build Containers') {
             steps {
-                bat 'docker compose build'
+                bat 'docker-compose build'
             }
         }
         stage('Run Containers') {
             steps {
-                bat 'docker compose up -d'
+                bat 'docker-compose up -d'
             }
         }
         // Προαιρετικά:
